@@ -5,7 +5,7 @@ const Likes = (props) => {
 	console.log(props, 'props')
 	return (
 		<div className="button-controls">
-			<button>♥ {props.likes}</button>
+			<button onClick={props.onIncrementLikes}>♥ {props.likes}</button>
 			<button>Dislike</button>
 		</div>
 	)
@@ -18,4 +18,17 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps)(Likes)
+const mapDispatchToProps = (dispatch) => {
+	return {
+		onIncrementLikes: () => {
+			console.log('CLICK')
+			const action = {
+				type: 'INCREMENT'
+			}
+
+			dispatch(action)
+		}
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Likes)
