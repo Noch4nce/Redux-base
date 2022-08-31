@@ -48,6 +48,7 @@
 	display: flex;
 	justify-content: space-between;
 	margin-top: 20px;
+	background-color: #80b5ea;
 }
 .card-title-top {
 	display: flex;
