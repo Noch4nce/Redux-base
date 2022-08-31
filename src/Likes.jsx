@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 const Likes = (props) => {
 	console.log(props, 'props')
@@ -10,4 +11,11 @@ const Likes = (props) => {
 	)
 }
 
-export default Likes
+const mapStateToProps = (state) => {
+	console.log(state, 'mapStateToProps')
+	return {
+		likes: state.likes
+	}
+}
+
+export default connect(mapStateToProps)(Likes)
