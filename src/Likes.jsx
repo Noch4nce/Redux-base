@@ -6,7 +6,7 @@ const Likes = (props) => {
 	return (
 		<div className="button-controls">
 			<button onClick={props.onIncrementLikes}>♥ {props.likes}</button>
-			<button>Dislike</button>
+			<button onClick={props.onDecrementLikes}>Dislike</button>
 		</div>
 	)
 }
@@ -24,6 +24,14 @@ const mapDispatchToProps = (dispatch) => {
 			console.log('CLICK')
 			const action = {
 				type: 'INCREMENT'
+			}
+
+			dispatch(action)
+		},
+		onDecrementLikes: () => {
+			console.log('DECREMENT')
+			const action = {
+				type: 'DECREMENT'
 			}
 
 			dispatch(action)
