@@ -1,4 +1,5 @@
 import { createStore } from 'redux'
+import { DECREMENT, INCREMENT } from './actions'
 
 const initialState = {
 	likes: 1
@@ -7,9 +8,9 @@ const initialState = {
 const reducer = (state = initialState, action) => {
 	console.log(action, 'reducer')
 	switch (action.type) {
-		case 'INCREMENT':
+		case INCREMENT:
 			return { ...state, likes: state.likes + 1 }
-		case 'DECREMENT':
+		case DECREMENT:
 			return { ...state, likes: state.likes - 1 }
 		default:
 			return state
