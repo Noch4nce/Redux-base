@@ -1,4 +1,4 @@
-import { DECREMENT, INCREMENT } from './actions'
+import { DECREMENT, INCREMENT } from './types'
 
 const initialState = {
 	likes: 0
