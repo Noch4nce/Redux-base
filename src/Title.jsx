@@ -1,16 +1,19 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { inputText } from './redux/actions'
 
 const Title = (props) => {
 	console.log(props, 'TITLE')
+	const dispatch = useDispatch()
 
 	const handleChange = (event) => {
-		console.log(event.target.value, 'eventTARG')
+		dispatch(inputText(event.target.value))
 	}
 
 	return (
 		<div className="card-title">
 			<div className="card-title-top">
-				<input type="text" onChange={handleChange}/>
+				<input type="text" onChange={handleChange} />
 			</div>
 		</div>
 	)

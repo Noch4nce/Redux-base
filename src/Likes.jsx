@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { decrementLikes, incrementLikes } from './redux/actions'
 
 const Likes = (props) => {
-	console.log(props, 'props')
 	return (
 		<div className="button-controls">
 			<button onClick={props.onIncrementLikes}>♥ {props.likes}</button>
@@ -13,7 +12,6 @@ const Likes = (props) => {
 }
 
 const mapStateToProps = (state) => {
-	console.log(state, 'mapStateToProps')
 	const { likesReducer } = state
 
 	return {

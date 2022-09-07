@@ -1,4 +1,4 @@
-import { DECREMENT, INCREMENT } from './types'
+import { DECREMENT, INCREMENT, INPUT_TEXT } from './types'
 
 export const incrementLikes = () => {
 	return {
@@ -11,3 +11,11 @@ export const decrementLikes = () => {
 		type: DECREMENT
 	}
 }
+
+export const inputText = (text) => {
+	return {
+		type: INPUT_TEXT,
+		text
+	}
+}
+
