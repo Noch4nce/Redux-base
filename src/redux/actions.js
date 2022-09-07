@@ -1,4 +1,4 @@
-import { DECREMENT, INCREMENT, INPUT_TEXT } from './types'
+import { CREATE_COMMENT, DECREMENT, INCREMENT, INPUT_TEXT } from './types'
 
 export const incrementLikes = () => {
 	return {
@@ -19,3 +19,12 @@ export const inputText = (text) => {
 	}
 }
 
+export const createComment = (text, id) => {
+	return {
+		type: CREATE_COMMENT,
+		data: {
+			text,
+			id
+		}
+	}
+}
