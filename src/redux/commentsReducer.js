@@ -6,13 +6,13 @@ const initialState = {
 
 export const commentsReducer = (state = initialState, action) => {
 	console.log(commentsReducer, action)
-	return state
-	// switch (action.type) {
-	// 	case CREATE_COMMENT:
-	// 		return {
-	// 			...state
-	// 		}
-	// 	default:
-	// 		return state
-	// }
+	switch (action.type) {
+		case CREATE_COMMENT:
+			return {
+				...state,
+				comments: [...state.comments, action.data]
+			}
+		default:
+			return state
+	}
 }
