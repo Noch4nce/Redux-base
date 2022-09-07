@@ -9,9 +9,14 @@ const Comments = (props) => {
 		setTextComment(e.target.value)
 	}
 
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		console.log(textComment, "textComment")
+	}
+
 	return (
 		<div className="card-comments">
-			<form className="comments-item-create">
+			<form onSubmit={handleSubmit} className="comments-item-create">
 				<input type="text" value={textComment} onChange={handleInput} />
 				<input type="submit" hidden />
 			</form>
