@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import SingleComment from './SingleComment'
+import { useDispatch } from 'react-redux'
+import { createComment } from './redux/actions'
+import uniqid from 'uniqid'
 
 const Comments = (props) => {
 	console.log(props, 'COMMNETS')
 	const [textComment, setTextComment] = useState('')
+	const dispatch = useDispatch()
 
 	const handleInput = (e) => {
 		setTextComment(e.target.value)
@@ -11,7 +15,9 @@ const Comments = (props) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		console.log(textComment, "textComment")
+		console.log(textComment, 'textComment')
+		const id = uniqid()
+		dispatch(createComment(textComment, id))
 	}
 
 	return (
