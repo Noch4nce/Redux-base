@@ -12,15 +12,15 @@ const Comments = (props) => {
 
 		return commentsReducer.comments
 	})
-	console.log(comments, 'comments')
 
 	const handleInput = (e) => {
 		setTextComment(e.target.value)
 	}
+	console.log(comments, 'comments')
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		console.log(textComment, 'textComment')
+
 		const id = uniqid()
 		dispatch(createComment(textComment, id))
 	}

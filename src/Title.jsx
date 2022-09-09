@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { inputText } from './redux/actions'
 
 const Title = (props) => {
-	console.log(props, 'TITLE')
 	const dispatch = useDispatch()
 	const text = useSelector((state) => {
 		const { inputReducer } = state

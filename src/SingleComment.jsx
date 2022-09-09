@@ -15,8 +15,8 @@ const SingleComment = ({ data }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		console.log(commentText, 'commentText')
-		dispatch(commentUpdate(text, id))
+
+		dispatch(commentUpdate(commentText, id))
 	}
 
 	const handleInput = (e) => {

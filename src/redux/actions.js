@@ -1,6 +1,6 @@
 import {
+	COMMENT_UPDATE,
 	CREATE_COMMENT,
-	CREATE_UPDATE,
 	DECREMENT,
 	INCREMENT,
 	INPUT_TEXT
@@ -37,7 +37,7 @@ export const createComment = (text, id) => {
 
 export const commentUpdate = (text, id) => {
 	return {
-		type: CREATE_UPDATE,
+		type: COMMENT_UPDATE,
 		data: {
 			text,
 			id
