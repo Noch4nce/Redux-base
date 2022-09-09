@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const SingleComment = (props) => {
-	console.log(props, 'SingleComment')
+const SingleComment = ({ data }) => {
+	const [commentText, setCommentText] = useState('')
+	const { text, id } = data
+
+	useEffect(() => {
+		if (text) {
+			setCommentText(text)
+		}
+	}, [text])
+
 	return (
 		<form className="comments-item">
 			<div className="comments-item-delete">&times;</div>
-			<input type="text" />
+			<input type="text" value={commentText} />
 			<input type="submit" hidden />
 		</form>
 	)

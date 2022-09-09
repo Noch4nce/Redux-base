@@ -31,7 +31,10 @@ const Comments = (props) => {
 				<input type="text" value={textComment} onChange={handleInput} />
 				<input type="submit" hidden />
 			</form>
-			<SingleComment />
+			{!!comments.length &&
+				comments.map((comment) => {
+					return <SingleComment key={comment.id} data={comment} />
+				})}
 		</div>
 	)
 }
