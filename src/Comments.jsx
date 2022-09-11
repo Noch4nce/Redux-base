@@ -1,12 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SingleComment from './SingleComment'
 import { useDispatch, useSelector } from 'react-redux'
-import { createComment } from './redux/actions'
+import { commentsLoad, createComment } from './redux/actions'
 import uniqid from 'uniqid'
 
-const Comments = (props) => {
+const Comments = () => {
 	const [textComment, setTextComment] = useState('')
 	const dispatch = useDispatch()
+
+	useEffect(() => {
+		dispatch(commentsLoad())
+	}, [])
+
 	const comments = useSelector((state) => {
 		const { commentsReducer } = state
 
