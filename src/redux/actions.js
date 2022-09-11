@@ -1,6 +1,7 @@
 import {
 	COMMENT_DELETE,
 	COMMENT_UPDATE,
+	COMMENTS_LOAD,
 	CREATE_COMMENT,
 	DECREMENT,
 	INCREMENT,
@@ -50,5 +51,17 @@ export const commentDelete = (id) => {
 	return {
 		type: COMMENT_DELETE,
 		id
+	}
+}
+
+export const commentsLoad = () => {
+	return async (dispatch) => {
+		const response = await fetch('https://jsonplaceholder.typicode.com/comments?_limit=10')
+		const jsonData = await response.json()
+
+		dispatch({
+			type: COMMENTS_LOAD,
+			data: jsonData
+		})
 	}
 }
