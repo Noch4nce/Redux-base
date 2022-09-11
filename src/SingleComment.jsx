@@ -14,7 +14,7 @@ const SingleComment = ({ data }) => {
 	}, [text])
 
 	const handleDelete = (e) => {
-		// e.preventDefault()
+		e.preventDefault()
 		dispatch(commentDelete(id))
 	}
 
