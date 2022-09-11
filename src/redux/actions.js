@@ -4,6 +4,8 @@ import {
 	COMMENTS_LOAD,
 	CREATE_COMMENT,
 	DECREMENT,
+	ERROR_DISPLAY_OFF,
+	ERROR_DISPLAY_ON,
 	INCREMENT,
 	INPUT_TEXT,
 	LOADER_DISPLAY_OFF,
@@ -68,18 +70,38 @@ export const loaderOff = () => {
 	}
 }
 
+export const errorOn = (text) => {
+	return {
+		type: ERROR_DISPLAY_ON,
+		text
+	}
+}
+
+export const errorOff = () => {
+	return {
+		type: ERROR_DISPLAY_OFF
+	}
+}
+
 export const commentsLoad = () => {
 	return async (dispatch) => {
-		dispatch(loaderOn())
-		const response = await fetch('https://jsonplaceholder.typicode.com/comments?_limit=10')
-		const jsonData = await response.json()
+		try {
+			dispatch(loaderOn())
+			const response = await fetch(
+				'https://sjsonplaceholder.typicode.com/comments?_limit=10'
+			)
+			const jsonData = await response.json()
 
-		setTimeout(() => {
-			dispatch({
-				type: COMMENTS_LOAD,
-				data: jsonData
-			})
+			setTimeout(() => {
+				dispatch({
+					type: COMMENTS_LOAD,
+					data: jsonData
+				})
+				dispatch(loaderOff())
+			}, 1000)
+		} catch (err) {
+			dispatch(errorOn('API error'))
 			dispatch(loaderOff())
-		}, 1000)
+		}
 	}
 }
