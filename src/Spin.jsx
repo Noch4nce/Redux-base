@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 
 const Spin = () => {
 	const spinner = useSelector((state) => state.appReducer.loading)
-	console.log(spinner, "spinner")
 
 	return (
 		<div className="loader-styles">
@@ -16,7 +15,7 @@ const Spin = () => {
 				ariaLabel="tail-spin-loading"
 				wrapperStyle={{}}
 				wrapperClass=""
-				visible={false}
+				visible={spinner}
 			/>
 		</div>
 	)
