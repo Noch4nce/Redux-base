@@ -1,4 +1,5 @@
 import {
+	COMMENT_DELETE,
 	COMMENT_UPDATE,
 	CREATE_COMMENT,
 	DECREMENT,
@@ -42,5 +43,12 @@ export const commentUpdate = (text, id) => {
 			text,
 			id
 		}
+	}
+}
+
+export const commentDelete = (id) => {
+	return {
+		type: COMMENT_DELETE,
+		id
 	}
 }
