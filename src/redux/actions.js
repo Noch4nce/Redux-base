@@ -71,9 +71,15 @@ export const loaderOff = () => {
 }
 
 export const errorOn = (text) => {
-	return {
-		type: ERROR_DISPLAY_ON,
-		text
+	return (dispatch) => {
+		dispatch({
+			type: ERROR_DISPLAY_ON,
+			text
+		})
+
+		setTimeout(() => {
+			dispatch(errorOff())
+		}, 2000)
 	}
 }
 
