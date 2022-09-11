@@ -11,7 +11,6 @@ const initialState = {
 }
 
 export const appReducer = (state = initialState, action) => {
-	console.log(action, 'appREDUCer')
 	switch (action.type) {
 		case LOADER_DISPLAY_ON: {
 			return {

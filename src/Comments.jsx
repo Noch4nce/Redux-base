@@ -10,7 +10,7 @@ const Comments = () => {
 
 	useEffect(() => {
 		dispatch(commentsLoad())
-	}, [])
+	}, [dispatch])
 
 	const comments = useSelector((state) => {
 		const { commentsReducer } = state
@@ -21,7 +21,6 @@ const Comments = () => {
 	const handleInput = (e) => {
 		setTextComment(e.target.value)
 	}
-	console.log(comments, 'comments')
 
 	const handleSubmit = (e) => {
 		e.preventDefault()

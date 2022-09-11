@@ -22,11 +22,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		onIncrementLikes: () => {
-			console.log('CLICK')
 			dispatch(incrementLikes())
 		},
 		onDecrementLikes: () => {
-			console.log('DECREMENT')
 			dispatch(decrementLikes())
 		}
 	}

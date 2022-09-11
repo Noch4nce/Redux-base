@@ -10,7 +10,6 @@ const initialState = {
 }
 
 export const commentsReducer = (state = initialState, action) => {
-	console.log(action, 'commentsReducer')
 	switch (action.type) {
 		case CREATE_COMMENT:
 			return {
